@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First Cloud Site - Sammatha Adams</title>
+    <style>
+        body { 
+            font-family: 'Segoe UI', sans-serif; 
+            text-align: center; 
+            margin-top: 50px; 
+            background-color: #f0f0f0; 
+            color: #333;
+        }
+        h1 { color: #0078d4; }
+        .container {
+            background: white;
+            display: inline-block;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .btn {
+            display: block;
+            width: 200px;
+            padding: 10px;
+            margin: 10px auto;
+            border: none;
+            border-radius: 5px;
+            background-color: #0078d4;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .btn:hover { background-color: #005a9e; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Hello from the Cloud!</h1>
+        <p>This site is hosted on Azure Blob Storage.</p>
+        <p>Deployed by: Sammatha Adams</p>
+
+        <hr style="margin: 20px 0; border: 0; border-top: 1px solid #eee;">
+
+        <button class="btn" onclick="navigateTo('github')">GitHub Profile</button>
+        <button class="btn" onclick="navigateTo('linkedin')">LinkedIn Profile</button>
+        <button class="btn" onclick="navigateTo('resume')">View Resume</button>
+    </div>
+
+    <script>
+        function navigateTo(platform) {
+            let url = "";
+            switch(platform) {
+                case 'github':
+                    url = "https://github.com/sammathaadams/sammathaadams";
+                    break;
+                case 'linkedin':
+                    url = "https://www.linkedin.com/in/sammatha-adams-746503152/";
+                    break;
+                case 'resume':
+                    url = "Sammatha_Adams_Resume.pdf"; // This must match your filename exactly
+                    break;
+            }
+            if (url) { window.open(url, "_blank"); }
+        }
+    </script>
+
+</body>
+</html>
