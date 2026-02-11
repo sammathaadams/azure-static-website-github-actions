@@ -3,47 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First Cloud Site - Sammatha Adams</title>
+    <title>Sammatha Adams | Cloud Portfolio</title>
     <style>
+        /* Animated Gradient Background */
         body { 
             font-family: 'Segoe UI', sans-serif; 
-            text-align: center; 
-            margin-top: 50px; 
-            background-color: #f0f0f0; 
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(-45deg, #0078d4, #00bcf2, #00182b, #004b87);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
             color: #333;
         }
-        h1 { color: #0078d4; }
-        .container {
-            background: white;
-            display: inline-block;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            text-align: center;
+            width: 350px;
+            transition: transform 0.3s ease;
+        }
+
+        .container:hover {
+            transform: scale(1.02);
+        }
+
+        h1 { color: #0078d4; margin-bottom: 5px; }
+        
+        /* Typing Effect Container */
+        .typing-text {
+            font-weight: bold;
+            color: #555;
+            height: 20px;
+            margin-bottom: 20px;
+        }
+
         .btn {
             display: block;
-            width: 200px;
-            padding: 10px;
-            margin: 10px auto;
+            width: 100%;
+            padding: 12px;
+            margin: 12px 0;
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
             background-color: #0078d4;
             color: white;
-            font-weight: bold;
+            font-size: 16px;
+            font-weight: 600;
             cursor: pointer;
+            transition: all 0.3s ease;
             text-decoration: none;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
-        .btn:hover { background-color: #005a9e; }
+
+        .btn:hover {
+            background-color: #005a9e;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        }
+
+        hr { border: 0; border-top: 1px solid #eee; margin: 20px 0; }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>Hello from the Cloud!</h1>
-        <p>This site is hosted on Azure Blob Storage.</p>
-        <p>Deployed by: Sammatha Adams</p>
-
-        <hr style="margin: 20px 0; border: 0; border-top: 1px solid #eee;">
+        <h1>Hello from the Cloud ☁️ — Auto Deploy Test!</h1>
+        <div class="typing-text" id="typewriter"></div>
+        <p style="font-size: 0.9em; color: #666;">This site is hosted on Azure Blob Storage.</p>
+        
+        <hr>
 
         <button class="btn" onclick="navigateTo('github')">GitHub Profile</button>
         <button class="btn" onclick="navigateTo('linkedin')">LinkedIn Profile</button>
@@ -51,6 +90,19 @@
     </div>
 
     <script>
+        // Typewriter Effect
+        const text = "Deployed by: Sammatha Adams";
+        let i = 0;
+        function typeWriter() {
+            if (i < text.length) {
+                document.getElementById("typewriter").innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, 100);
+            }
+        }
+        window.onload = typeWriter;
+
+        // Navigation Function
         function navigateTo(platform) {
             let url = "";
             switch(platform) {
@@ -61,7 +113,7 @@
                     url = "https://www.linkedin.com/in/sammatha-adams-746503152/";
                     break;
                 case 'resume':
-                    url = "Sammatha_Adams_Resume.pdf"; // This must match your filename exactly
+                    url = "Sammatha_Adams_Resume.pdf";
                     break;
             }
             if (url) { window.open(url, "_blank"); }
