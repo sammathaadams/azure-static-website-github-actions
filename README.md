@@ -120,6 +120,15 @@ Because the workflow lives inside the repository, the full pipeline configuratio
 ## 🧪 Part 4 — Testing the Pipeline
 
 During the walkthrough, a small UI change is introduced to demonstrate automation in action.
+### Demo Change (Deployment Indicator)
+
+Add this snippet to `Static-website/index.html` (inside the `.container` div) to visibly confirm automated deployment:
+
+```html
+<p style="font-size: 0.8em; color:#888;">
+  Deployed automatically via GitHub Actions CI/CD
+</p>
+
 
 Test process:
 
