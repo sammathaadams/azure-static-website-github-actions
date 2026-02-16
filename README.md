@@ -2,7 +2,7 @@
 
 ☁️ Azure | 🤖 GitHub Actions | 🚀 Automated Deployment
 
-![Pipeline Status](PASTE_YOUR_BADGE_LINK_HERE)
+[![Deploy Azure Blob Static Website](https://github.com/sammathaadams/azure-static-website-github-actions/actions/workflows/deploy.yml/badge.svg)](https://github.com/sammathaadams/azure-static-website-github-actions/actions/workflows/deploy.yml) 
 
 **Automated static website deployment to Azure Blob Storage using GitHub Actions.**
 This project demonstrates moving from a manual Azure deployment to a fully automated CI/CD workflow where every push to the `main` branch updates the live website.
