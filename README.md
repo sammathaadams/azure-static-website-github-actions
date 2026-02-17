@@ -11,7 +11,7 @@ This project demonstrates moving from a manual Azure deployment to a fully autom
 
 ## 🎥 Watch Me Complete This Lab Here!
 
-👉 *(Insert your Loom video link here)*
+👉 *[(Insert your Loom video link here)](https://www.loom.com/share/944ce279b28144dba467a1863e020291)*
 
 ---
 
